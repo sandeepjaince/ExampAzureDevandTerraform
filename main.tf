@@ -3,6 +3,19 @@ provider "azurerm" {
     features {}
   }
 
+
+  terraform {
+
+        backend "azurerm" {
+            resource_group_name = "tftest"
+            storage_account_name = "tfsdockerstorage"
+            container_name = "tfstate"
+            key = "terraform.tfstate"
+          
+        }
+    
+  }
+
   resource "azurerm_resource_group" "terrform_test" {
     name = "tftest"
     location = "Australia East"
