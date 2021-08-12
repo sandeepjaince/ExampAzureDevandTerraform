@@ -15,7 +15,7 @@ provider "azurerm" {
             resource_group_name = "tf_rg_blobstorage"
             storage_account_name = "tfsdockerstorage007"
             container_name = "tfstate"
-            key = "terraform.tfstate"
+            
           
         }
     
