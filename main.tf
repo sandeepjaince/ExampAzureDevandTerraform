@@ -16,6 +16,12 @@ provider "azurerm" {
     
   }
 
+  variable "imagebuild" {
+      type         = string
+      description = "Latest variable for image"
+    
+  }
+
   resource "azurerm_resource_group" "terrform_test" {
     name = "tftest"
     location = "Australia East"
@@ -33,7 +39,7 @@ provider "azurerm" {
     container {
       
       name   = "weatherapi"
-      image  = "dockersanny0078/weatherapi"
+      image  = "dockersanny0078/weatherapi: ${var.imagebuild}"
       cpu    = "1"
       memory = "1"
 
